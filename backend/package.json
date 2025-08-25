@@ -1,0 +1,40 @@
+{
+  "name": "my-first-express-app",
+  "version": "1.0.0",
+  "description": "testing express.js",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node ./dist/app.js",
+    "dev": "nodemon app.js",
+    "debug": "nodemon --inspect app.js",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/typeorm": "^11.0.0",
+    "@types/cors": "^2.8.19",
+    "body-parser": "^2.2.0",
+    "color-convert": "^3.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "nunjucks": "^3.2.4",
+    "reflect-metadata": "^0.2.2",
+    "slug": "^11.0.0",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.26"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
+    "@types/nunjucks": "^3.2.6",
+    "@types/slug": "^5.0.9",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "prettier-plugin-jinja-template": "^2.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
