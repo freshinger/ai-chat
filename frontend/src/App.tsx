@@ -13,7 +13,7 @@ interface IChat {
 }
 
 function App() {
-  const id = uuidv4();
+  const [id] = useState(uuidv4());
 
   function chat(formData: FormData){
     const prompt = formData.get('prompt');
