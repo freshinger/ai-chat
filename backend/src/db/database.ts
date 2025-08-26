@@ -1,5 +1,6 @@
 import sqlite3 from "sqlite3";
 import path from "path";
+import { Interface } from "readline";
 
 const dbInstance = sqlite3.verbose();
 
@@ -23,7 +24,8 @@ export function connectDB(): Promise<sqlite3.Database> {
                     CREATE TABLE IF NOT EXISTS messages (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         prompt TEXT NOT NULL,
-                        answer TEXT NOT NULL
+                        answer TEXT NOT NULL,
+                        thread TEXT NOT NULL
                     )
                 `,
             (createErr: Error | null) => {
@@ -68,12 +70,3 @@ export function closeDB(): Promise<void> {
     }
   });
 }
-
-export const fetchAll = async (db: sqlite3.Database, sql: string) => {
-  return new Promise((resolve, reject) => {
-    db.all(sql, (err, rows) => {
-      if (err) reject(err);
-      resolve(rows);
-    });
-  });
-};

@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
+import { v4 as uuidv4 } from 'uuid';
+
 interface IHistory {
   history: IChat[];
 }
@@ -11,23 +13,24 @@ interface IChat {
 }
 
 function App() {
+  const id = uuidv4();
+
   function chat(formData: FormData){
     const prompt = formData.get('prompt');
     fetch('http://localhost:3000/message/',{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({message: prompt})
+      body: JSON.stringify({message: prompt, threadid: id})
     }).then(() => 
     fetchData())
   } 
 
   function fetchData() {
-    fetch('http://localhost:3000/message/')
+    fetch('http://localhost:3000/message/'+id)
     .then( res => res.json())
     .then(
       result => 
         setChatHistory(result)
-      
     );
   }
 

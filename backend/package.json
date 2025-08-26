@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@langchain/core": "^0.3.72",
+    "@langchain/openai": "^0.6.9",
     "@nestjs/typeorm": "^11.0.0",
     "@types/cors": "^2.8.19",
     "body-parser": "^2.2.0",
@@ -20,6 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
+    "langchain": "^0.3.31",
     "nunjucks": "^3.2.4",
     "reflect-metadata": "^0.2.2",
     "slug": "^11.0.0",
